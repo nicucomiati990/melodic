@@ -1,4 +1,5 @@
 import { Howler, Howl } from 'howler';
+import equalizer from './Equalizer';
 import * as api from '../api/api';
 
 export class SoundEngine {
@@ -31,6 +32,7 @@ export class SoundEngine {
     console.log('play');
     if (this.song) {
       this.song.play();
+      equalizer.start(this.song);
     }
   };
 

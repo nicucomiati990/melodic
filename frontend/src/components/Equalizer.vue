@@ -5,9 +5,10 @@
 </template>
 \
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 import equalizer from '../sound/Equalizer';
 
+@Component
 export default class Equalizer extends Vue {
   public mounted() {
     console.log('eq');
