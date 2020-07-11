@@ -32,7 +32,7 @@ export class SoundEngine {
     console.log('play');
     if (this.song) {
       this.song.play();
-      equalizer.start(this.song);
+      equalizer.start();
     }
   };
 
