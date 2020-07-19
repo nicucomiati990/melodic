@@ -44,6 +44,7 @@ const store: StoreOptions<SongState> = {
       console.log('playing', songId);
       await soundEngine.fetchSong(songId);
       context.dispatch('togglePlayPause', true);
+      soundEngine.song?.on('end', () => context.dispatch('nextSong'));
     },
     togglePlayPause(
       context: ActionContext<SongState, SongState>,
