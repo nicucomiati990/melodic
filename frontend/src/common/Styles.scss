@@ -1,3 +1,10 @@
 @import './Colors.scss';
+@import './Constants.scss';
 
 $gradient-bg: linear-gradient(to right, $red, $orange);
+
+@mixin small-screen {
+  @media screen and (max-width: $min-screen-width) {
+    @content;
+  }
+}

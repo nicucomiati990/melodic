@@ -41,8 +41,12 @@ export default class PlayList extends Vue {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-height: calc(100vh - 80px);
   overflow-y: auto;
+  min-height: 0;
+
+  @include small-screen {
+    width: 100%;
+  }
 
   & > div {
     cursor: pointer;
@@ -50,6 +54,7 @@ export default class PlayList extends Vue {
     width: 100%;
     display: flex;
     align-items: center;
+    text-align: left;
     padding: 15px;
 
     .play-icon {
@@ -57,7 +62,6 @@ export default class PlayList extends Vue {
     }
 
     &.playing {
-      // background-color: $light-red;
       background: $gradient-bg;
     }
 

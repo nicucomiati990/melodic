@@ -3,7 +3,7 @@
     <div class="separator" />
     <div class="buttons">
       <div class="song-name">{{$store.getters.currentSong && $store.getters.currentSong.name}}</div>
-      <div>
+      <div class="play-buttons-container">
         <play-bar-button v-on:click="prevSong" icon="fast-backward" size="40" />
         <play-bar-button v-on:click="togglePlaying" :icon="playText" />
         <play-bar-button v-on:click="nextSong" icon="fast-forward" size="40" />
@@ -57,14 +57,13 @@ export default class PlayBar extends Vue {
 @import '../common/Styles.scss';
 
 $side-content-width: 200px;
+$side-content-small-width: 100px;
 
 .play-bar {
   height: 80px;
   background-color: $gray;
   display: flex;
   flex-direction: column;
-  position: sticky;
-  bottom: 0;
   width: 100%;
 
   .separator {
@@ -91,6 +90,24 @@ $side-content-width: 200px;
     .song-name {
       width: $side-content-width;
       padding: 0 10px;
+
+      @include small-screen {
+        width: $side-content-small-width;
+      }
+    }
+
+    .play-buttons-container {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      button {
+        margin: 0 10px;
+
+        @include small-screen {
+          margin: 0 5px;
+        }
+      }
     }
   }
 }

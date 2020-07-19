@@ -34,7 +34,6 @@ $button-color: $red;
   color: white;
   cursor: pointer;
   transition: background-color 0.1s;
-  margin: 0 10px;
 
   &:hover {
     background-color: $button-color;

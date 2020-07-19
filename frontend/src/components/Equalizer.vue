@@ -18,9 +18,16 @@ export default class Equalizer extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import '../common/Styles.scss';
+
 .container {
   flex: 1;
   width: calc(100vw - 300px);
+
+  @include small-screen {
+    width: 100vw;
+    height: 30vh;
+  }
 
   .equalizer {
     height: 100%;
