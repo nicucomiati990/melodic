@@ -1,10 +1,10 @@
 from flask import send_file, jsonify
 import pyodbc
 import io
+from api.config.config import get_server_name
 from api.models.song import Song
-import json
 
-server_name = 'NICU\SQLEXPRESS'
+server_name = get_server_name()
 database_name = 'MelodicSongs'
 
 conn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};'

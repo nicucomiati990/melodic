@@ -1,10 +1,8 @@
-import pathlib
 import pyodbc
 from os import listdir, path, system
-from os.path import isfile, join, basename
-import base64
+from api.config.config import get_server_name
 
-server_name = 'NICU\SQLEXPRESS'
+server_name = get_server_name()
 database_name = 'MelodicSongs'
 
 # recreate db
