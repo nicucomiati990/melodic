@@ -46,6 +46,7 @@ export class SoundEngine {
   private stopAll() {
     if (this.song) {
       this.song.stop();
+      Howler.unload();
     }
   }
 
